@@ -1,0 +1,103 @@
+:root {
+    --black: #121212;
+    --white: #ffffff;
+    --logoblue: rgb(29,205,254);
+    --logogreen: rgb(52,245,198);
+    --lightgrey: rgb(200, 200, 200);
+    --background: #ffffff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background);
+    font-size: 1.2rem;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    
+    > li {
+        margin: 0 2rem;
+        > a {
+            text-decoration: none;
+            color: black;
+        }
+
+        > a:hover {
+            text-decoration: underline;
+            color: var(--logoblue);
+        }
+    }
+}
+
+   
+.logo-container {
+    width: 100px;
+    height: 100px;
+    background: rgb(29,205,254);
+    background: linear-gradient(135deg, var(--logoblue) 48%, var(--logogreen) 48%);
+    scale: 0.7;
+
+    > .logo-cut-1 {
+        width: 85px;
+        height: 10px;
+        position: relative;
+        top: 13px;
+        left: 15px;
+        background-color: var(--background);
+    }
+
+    > .logo-cut-2 {
+        width: 80px;
+        height: 10px;
+        position: relative;
+        top: 65px;
+        left: 0;
+        background-color: var(--background);
+    }
+
+    > .logo-cut-3 {
+        width: 10px;
+        height: 85px;
+        position: relative;
+        top: -5px;
+        left: 15px;
+        background-color: var(--background);
+    }
+    > .logo-cut-4 {
+        width: 10px;
+        height: 90px;
+        position: relative;
+        top: -110px;
+        left: 75px;
+        background-color: var(--background);
+    }
+
+    > .logo-center {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: -155px;
+        left: 40px;
+        background-color: var(--background);
+    }
+
+    > .logo-cut-5 {
+        width: 10px;
+        height: 75px;
+        position: relative;
+        top: -205px;
+        left: 45px;
+        transform: rotate(45deg);
+        background-color: var(--background);
+    }
+}
