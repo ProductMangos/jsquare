@@ -9,175 +9,50 @@
 <body>
     <main>
         <div class="border-decoration">
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
+            <template id="border-template-top">
+                <div class="border">
+                    <div class="square"></div>
+                    <div class="circle-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
                 </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div></div>
-            </div>
-            <div class="border">
-                <div class="square"></div>
-                <div class="circle-container">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="square"></div>
-                
-            </div>
+            </template>
         </div>
-
+        
         <header>
             <h1>Jordan Cuadrado</h1>
             <h2>Software Developer</h2>
         </header>
+
+        <div class="border-decoration bottom">
+            <template id="border-template-bottom">
+                <div class="border">
+                    <div class="square"></div>
+                    <div class="circle-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </template>
+        </div>
     </main>
+    
+    <script>
+        const screenWidth = Math.round(window.innerWidth / 50);
+
+        const topContainer = document.querySelector('.border-decoration');
+        const bottomContainer = document.querySelector('.border-decoration.bottom');
+        const borderTemplateTop = document.getElementById('border-template-top');
+        const borderTemplateBottom = document.getElementById('border-template-bottom');
+        
+        for (let i = 0; i < screenWidth; i++) {
+            topContainer.appendChild(borderTemplateTop.content.cloneNode(true));
+            bottomContainer.appendChild(borderTemplateBottom.content.cloneNode(true));
+        }
+        
+    </script>
 </body>
 </html>
