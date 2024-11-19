@@ -7,7 +7,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
+    <div class="background-container">
+        <nav>
+            <div class="sidebar-container">
+                <div class="sidebar"></div>
+                <div class="sidebar-short"></div>
+            </div>
+            <ul>
+                <a><li class="active">
+                    <div class="map-icon"></div>
+                    <h2>MAP</h2>
+                </li></a>
+                <a><li>
+                    <div class="map-icon"></div>
+                    <h2>ABOUT</h2>
+                </li></a>
+                <a><li>
+                    <div class="map-icon"></div>
+                    <h2>PROJ</h2>
+                </li></a>
+                <a><li>
+                    <div class="map-icon"></div>
+                    <h2>BLOG</h2>
+                </li></a>
+            </ul>
+        </nav>
+        <div class="border-line"></div>
         <div class="border-decoration">
             <template id="border-template-top">
                 <div class="border">
@@ -20,12 +45,13 @@
                 </div>
             </template>
         </div>
-        
+        <main>
         <header>
             <h1>Jordan Cuadrado</h1>
             <h2>Software Developer</h2>
         </header>
-
+    </main>
+        <div class="border-line"></div>
         <div class="border-decoration bottom">
             <template id="border-template-bottom">
                 <div class="border">
@@ -38,10 +64,11 @@
                 </div>
             </template>
         </div>
-    </main>
+    </div>
+    
     
     <script>
-        const screenWidth = Math.round(window.innerWidth / 50);
+        const screenWidth = Math.round(3840 / 50);
 
         const topContainer = document.querySelector('.border-decoration');
         const bottomContainer = document.querySelector('.border-decoration.bottom');
@@ -51,6 +78,16 @@
         for (let i = 0; i < screenWidth; i++) {
             topContainer.appendChild(borderTemplateTop.content.cloneNode(true));
             bottomContainer.appendChild(borderTemplateBottom.content.cloneNode(true));
+        }
+
+        const li = document.querySelectorAll('li');
+        for (let i = 0; i < li.length; i++) {
+            li[i].addEventListener('click', () => {
+                for (let j = 0; j < li.length; j++) {
+                    li[j].classList.remove('active');
+                }
+                li[i].classList.add('active');
+            });
         }
         
     </script>
