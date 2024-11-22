@@ -99,6 +99,13 @@ body {
 }
 
 /* ENDBORDEREDGE */
+        
+
+/* NAV ICONS */
+
+
+
+/* ENDNAV ICONS */
 
 /* MAIN */
 main {
@@ -132,6 +139,8 @@ ul {
         background-size: 200% 100%;
         background-position: right bottom;
         transition: all .1s ease-out;
+        display: flex;
+        align-items: center;
 
         h2 {
             margin: 5.3px 3px;
@@ -155,14 +164,45 @@ li.active {
     color: var(--tan);
 }
 
-
-.map-icon {
+.map-icon, .about-icon, .proj-icon, .blog-icon {
     width: 25px;
     height: 25px;
-    background-color: var(--logoblue);
-    background-image: url(./images/map-icon.png);
-    background-size: 40px 40px;
-    margin: 7px;
+    margin: 0 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.map-icon {
+    background-image: url(assets/images/map-icon.webp);
+}
+
+.about-icon {
+    background-image: url(assets/images/about-me-icon.webp);
+}
+
+.proj-icon {
+    background-image: url(assets/images/proj-icon.webp);
+}
+
+.blog-icon {
+    background-image: url(assets/images/blog-icon.webp);
+}
+
+.active > .map-icon {
+    background-image: url(assets/images/map-icon-white.webp);
+}
+
+.active > .about-icon {
+    background-image: url(assets/images/about-me-icon-white.webp);
+}
+
+.active > .proj-icon {
+    background-image: url(assets/images/proj-icon-white.webp);
+}
+
+.active > .blog-icon {
+    background-image: url(assets/images/blog-icon-white.webp);
 }
 
 /* ENDMAIN */
+
