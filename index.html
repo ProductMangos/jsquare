@@ -52,16 +52,8 @@
             <h1>Jordan Cuadrado</h1>
             <h2>Software Developer</h2>
         </header> -->
-        <div class="section">
-
-            <map>
-                <div id="map" style="width: 800px; height: 600px"></div>
-
-                <!-- <img id="harrisburg" src="assets/images/harrisburg.webp" alt="Map" usemap="#workmap" width="500"> -->
-                <!-- <div class="overlay"></div> -->
-            </map>
-        </div>
-
+        <section id="section">
+        </section>
     </main>
         <div class="border-line"></div>
         <div class="border-decoration bottom">
@@ -80,16 +72,6 @@
     
     
     <script>
-        var map = new maplibregl.Map({
-            container: 'map', 
-            style: 'https://api.maptiler.com/maps/1bffc8ab-95e3-4be3-beb5-b113bb2fa8a3/style.json?key=wmtMLpHMfnbRsiCDzdNB', // style URL
-            center: [-76.88699, 40.25999], 
-            zoom: 15,
-            interactive: true,
-            pitch: 60
-        });
-
-
         const screenWidth = Math.round(3840 / 50);
 
         const topContainer = document.querySelector('.border-decoration');
@@ -109,8 +91,63 @@
                     li[j].classList.remove('active');
                 }
                 li[i].classList.add('active');
+
+                const selectedLi = li[i].querySelector('h2').textContent;
+                if (selectedLi === 'MAP') {
+                    loadMapPage();
+                } else if (selectedLi === 'ABOUT') {
+                    loadAboutPage();
+                } else if (selectedLi === 'PROJ') {
+                    loadProjPage();
+                } else if (selectedLi === 'BLOG') {
+                    loadBlogPage();
+                }
+                
             });
         }
+
+        const section = document.querySelector('section');
+               
+        const loadMapPage = () => {
+            fetch('map.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load map.html');
+                return response.text();
+            })
+            .then(html => {
+                section.innerHTML = html; 
+                const scriptTags = section.querySelectorAll('script');
+                scriptTags.forEach(script => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent; 
+                    document.body.appendChild(newScript); 
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        const loadAboutPage = () => {
+            fetch('about.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load about.html');
+                return response.text();
+            })
+            .then(html => {
+                section.innerHTML = html; 
+                const scriptTags = section.querySelectorAll('script');
+                scriptTags.forEach(script => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent; 
+                    document.body.appendChild(newScript); 
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
         
     </script>
 </body>
