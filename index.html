@@ -72,8 +72,12 @@
     
     
     <script>
-        const screenWidth = Math.round(3840 / 50);
 
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAboutPage();
+        })
+        
+        const screenWidth = Math.round(3840 / 50);
         const topContainer = document.querySelector('.border-decoration');
         const bottomContainer = document.querySelector('.border-decoration.bottom');
         const borderTemplateTop = document.getElementById('border-template-top');
@@ -107,7 +111,7 @@
         }
 
         const section = document.querySelector('section');
-               
+
         const loadMapPage = () => {
             fetch('map.html')
             .then(response => {
