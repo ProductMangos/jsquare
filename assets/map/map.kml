@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1fGx18qe10sQEzCDxP1cbvCsaQtKrgNHx">
+	<name>Untitled project</name>
+	<gx:CascadingStyle kml:id="__managed_style_2E778A677F348EE359DA">
+		<Style>
+			<IconStyle>
+				<scale>2.4</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1589D4E3E8348EE359DA">
+		<Style>
+			<IconStyle>
+				<scale>2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0E5406F4DF348EE359DA">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1589D4E3E8348EE359DA</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2E778A677F348EE359DA</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0BB77C3A9C348EB5E5B3">
+		<name>Harrisburg, PA</name>
+		<LookAt>
+			<longitude>-76.88284335845582</longitude>
+			<latitude>40.26888544791111</latitude>
+			<altitude>139.3834424857323</altitude>
+			<heading>91.94322517511192</heading>
+			<tilt>60.00119196755242</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>3019.359960577567</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0E5406F4DF348EE359DA</styleUrl>
+		<Point>
+			<coordinates>-76.88561219143236,40.26790928774847,108.1760560105044</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="05870B0571348EE3191B">
+		<name>Lancaster, PA</name>
+		<LookAt>
+			<longitude>-76.30534938343772</longitude>
+			<latitude>40.03820842982006</latitude>
+			<altitude>125.8517012428136</altitude>
+			<heading>58.48227407157565</heading>
+			<tilt>59.97660360755403</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1547.437216749822</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0E5406F4DF348EE359DA</styleUrl>
+		<Point>
+			<coordinates>-76.30447228861777,40.03865439809117,127.5187288669416</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

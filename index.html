@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jordan Cuadrado</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
 <body>
     <div class="background-container">
@@ -46,10 +48,20 @@
             </template>
         </div>
         <main>
-        <header>
+        <!-- <header>
             <h1>Jordan Cuadrado</h1>
             <h2>Software Developer</h2>
-        </header>
+        </header> -->
+        <div class="section">
+
+            <map>
+                <div id="map" style="width: 800px; height: 600px"></div>
+
+                <!-- <img id="harrisburg" src="assets/images/harrisburg.webp" alt="Map" usemap="#workmap" width="500"> -->
+                <!-- <div class="overlay"></div> -->
+            </map>
+        </div>
+
     </main>
         <div class="border-line"></div>
         <div class="border-decoration bottom">
@@ -68,6 +80,16 @@
     
     
     <script>
+        var map = new maplibregl.Map({
+            container: 'map', 
+            style: 'https://api.maptiler.com/maps/1bffc8ab-95e3-4be3-beb5-b113bb2fa8a3/style.json?key=wmtMLpHMfnbRsiCDzdNB', // style URL
+            center: [-76.88699, 40.25999], 
+            zoom: 15,
+            interactive: true,
+            pitch: 60
+        });
+
+
         const screenWidth = Math.round(3840 / 50);
 
         const topContainer = document.querySelector('.border-decoration');

@@ -206,3 +206,40 @@ li.active {
 
 /* ENDMAIN */
 
+/* li.active::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 310px;
+    width: 20px;
+    height: 10px;
+    background-color: green;
+   
+} */
+
+map {
+    width: fit-content;
+    border: 1px solid black;
+    display: block;
+    position: relative
+    
+}
+
+.overlay {
+    top: 0;
+    width: 500px;
+    height: 500px;
+    background-color: var(--tan);
+    z-index: 2;
+    opacity: 0.3;
+    position: absolute;
+
+}
+
+.section-bar {
+    background-color: var(--black);
+    height: 50px;
+    width: 802px;
+    border: 1px solid var(--black);
+    color: white;
+}
