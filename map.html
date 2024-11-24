@@ -1,4 +1,17 @@
+<header>
+    <h1 class="page-title">MAP</h1>
+</header>
 <div class="section">
+    <div class="menu">
+        <div class="sidebar-container">
+            <div class="sidebar-long"></div>
+            <div class="sidebar-short-long"></div>
+        </div>
+        <aside>
+            <h2>Map</h2>
+        </aside>
+    </div>
+
     <map>
         <div id="map" style="width: 800px; height: 600px"></div>
     </map>
@@ -6,10 +19,15 @@
 <script>
     var map = new maplibregl.Map({
         container: 'map',
-        style: 'https://api.maptiler.com/maps/1bffc8ab-95e3-4be3-beb5-b113bb2fa8a3/style.json?key=wmtMLpHMfnbRsiCDzdNB',
         center: [-76.88699, 40.25999],
         zoom: 15,
         interactive: true,
         pitch: 60
     });
+
+
+    fetch("https://api.maptiler.com/maps/1bffc8ab-95e3-4be3-beb5-b113bb2fa8a3/style.json?key=wmtMLpHMfnbRsiCDzdNB")
+    .then(response => response.json())
+    .then(data => {
+        map.setStyle(data);});
 </script>

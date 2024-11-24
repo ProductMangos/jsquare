@@ -16,11 +16,11 @@
                 <div class="sidebar-short"></div>
             </div>
             <ul>
-                <a><li>
+                <a><li class="active">
                     <div class="map-icon"></div>
                     <h2>MAP</h2>
                 </li></a>
-                <a><li class="active">
+                <a><li>
                     <div class="about-icon"></div>
                     <h2>ABOUT</h2>
                 </li></a>
@@ -74,9 +74,9 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadAboutPage();
+            loadMapPage();
         })
-        
+
         const screenWidth = Math.round(3840 / 50);
         const topContainer = document.querySelector('.border-decoration');
         const bottomContainer = document.querySelector('.border-decoration.bottom');

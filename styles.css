@@ -25,6 +25,19 @@ body {
     margin: 0 auto;
 }
 
+h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    text-shadow: 6px 8px 2px rgba(0,0,0,0.1);
+    display: block;
+    font-size: 2.5em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
 
 /* ENDROOT */
 
@@ -234,6 +247,30 @@ map {
     opacity: 0.3;
     position: absolute;
 
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .menu {
+        display: flex;
+        align-items: self-start;
+    }
+}
+
+.sidebar-long {
+    height: 200px;
+    width: 13px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-short-long {
+    margin: 0 5px;
+    height: 200px;
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .section-bar {
