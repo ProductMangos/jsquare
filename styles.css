@@ -25,6 +25,16 @@ body {
     margin: 0 auto;
 }
 
+header {
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+}
+
 h1 {
     font-weight: normal;
     text-transform: uppercase;
@@ -45,6 +55,7 @@ h1 {
 
 .background-container {
     margin: 0 auto;
+    height: 1000px;
 }
 
 .sidebar-container {
@@ -124,6 +135,7 @@ h1 {
 main {
     width: 90.5%;
     margin: 0 auto;
+    height: 800px;
 }
 
 nav {
@@ -155,6 +167,22 @@ ul {
         display: flex;
         align-items: center;
 
+        a > .map {
+            
+            margin-left: 30px;
+            width: 250px;
+            height: 40px;
+            background-color: red;
+            margin-top: 5px;
+            display: flex;
+            background: linear-gradient(to right, #4D493E 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .1s ease-out;
+            display: flex;
+            align-items: center;
+        }
+
         h2 {
             margin: 5.3px 3px;
             font-weight: 300;
@@ -171,13 +199,14 @@ li:hover {
     color: var(--tan);
 }
 
+
 li.active {
     height: 60px;
     background-color: var(--black);
     color: var(--tan);
 }
 
-.map-icon, .about-icon, .proj-icon, .blog-icon {
+.map-icon, .about-icon, .proj-icon, .blog-icon, .blank-icon {
     width: 25px;
     height: 25px;
     margin: 0 10px;
@@ -201,6 +230,23 @@ li.active {
     background-image: url(assets/images/blog-icon.webp);
 }
 
+.blank-icon {
+    background-color: var(--black);
+}
+
+li:hover .blank-icon {
+    background-color: var(--tan);
+}
+
+li.selected {
+    background-color: var(--black);
+    color: var(--tan);
+}
+
+li.selected .blank-icon {
+    background-color: var(--tan);
+}
+
 .active > .map-icon {
     background-image: url(assets/images/map-icon-white.webp);
 }
@@ -216,6 +262,7 @@ li.active {
 .active > .blog-icon {
     background-image: url(assets/images/blog-icon-white.webp);
 }
+
 
 /* ENDMAIN */
 

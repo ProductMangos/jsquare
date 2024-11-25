@@ -1,5 +1,6 @@
 <header>
     <h1 class="page-title">MAP</h1>
+    <span>- base of operations</span>
 </header>
 <div class="section">
     <div class="menu">
@@ -8,7 +9,18 @@
             <div class="sidebar-short-long"></div>
         </div>
         <aside>
-            <h2>Map</h2>
+            <ul>
+                <a><li style="width: 500px" class="map-li selected">
+                    <div class="blank-icon"></div>
+                    <h2>Harrisburg</h2>
+                </li></a>
+            </ul>
+            <ul style="margin: 20px 0">
+                <a><li style="width: 500px" class="map-li">
+                    <div class="blank-icon"></div>
+                    <h2>Lancaster</h2>
+                </li></a>
+            </ul>
         </aside>
     </div>
 
@@ -30,4 +42,29 @@
     .then(response => response.json())
     .then(data => {
         map.setStyle(data);});
+
+
+        let mapli = document.querySelectorAll('.map-li');
+        mapli.forEach((li) => {
+            li.addEventListener('click', () => {
+                mapli.forEach((li) => {
+                    li.classList.remove('selected');
+                });
+                li.classList.add('selected');
+
+                const selectedLi = li.querySelector('h2').textContent;
+                if (selectedLi === 'Harrisburg') {
+                    map.flyTo({
+                        center: [-76.88699, 40.25999],
+                    });
+                } else if (selectedLi === 'Lancaster') {
+                    map.flyTo({
+                        center: [-76.30534938343772, 40.03820842982006],
+                        zoom: 15
+                    });
+                }
+            });
+        });
+
+
 </script>
