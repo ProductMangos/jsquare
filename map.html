@@ -9,25 +9,32 @@
             <div class="sidebar-short-long"></div>
         </div>
         <aside>
-            <ul>
-                <a><li style="width: 500px" class="map-li selected">
+            <ul class="item-list">
+                <li class="map-li selected">
                     <div class="blank-icon"></div>
                     <h2>Harrisburg</h2>
-                </li></a>
-            </ul>
-            <ul style="margin: 20px 0">
-                <a><li style="width: 500px" class="map-li">
+                </li>
+                <li class="map-li">
                     <div class="blank-icon"></div>
                     <h2>Lancaster</h2>
-                </li></a>
+                </li>
             </ul>
         </aside>
     </div>
 
-    <map>
-        <div id="map" style="width: 800px; height: 600px"></div>
-    </map>
+    <div id="map"></div>
+
 </div>
+<footer>
+    <div class="sidebar-container-grow">
+        <div class="sidebar-grow"></div>
+        <div class="sidebar-grow-long"></div>
+    </div>
+    <div class="footer-text">
+        <span>Email: jac5915@gmail.com</span>
+        <span>Phone: 717-380-4118</span>
+    </div>
+</footer>
 <script>
     var map = new maplibregl.Map({
         container: 'map',

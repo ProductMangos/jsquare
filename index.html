@@ -16,22 +16,22 @@
                 <div class="sidebar-short"></div>
             </div>
             <ul>
-                <a><li class="active">
+                <li class="active">
                     <div class="map-icon"></div>
                     <h2>MAP</h2>
-                </li></a>
-                <a><li>
+                </li>
+                <li>
                     <div class="about-icon"></div>
                     <h2>ABOUT</h2>
-                </li></a>
-                <a><li>
+                </li>
+                <li>
                     <div class="proj-icon"></div>
                     <h2>PROJ</h2>
-                </li></a>
-                <a><li>
+                </li>
+                <li>
                     <div class="blog-icon"></div>
                     <h2>BLOG</h2>
-                </li></a>
+                </li>
             </ul>
         </nav>
         <div class="border-line"></div>
@@ -169,6 +169,62 @@
             });
         }
 
+        const loadProjPage = () => {
+            fetch('proj.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load about.html');
+                return response.text();
+            })
+            .then(html => {
+                section.innerHTML = html; 
+                const scriptTags = section.querySelectorAll('script');
+                scriptTags.forEach(script => {
+                    const newScript = document.createElement('script');
+
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.textContent = `
+                            (() => {
+                                ${script.textContent}
+                            })();
+                        `;
+                    }
+                    document.body.appendChild(newScript); 
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        const loadBlogPage = () => {
+            fetch('blog.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load about.html');
+                return response.text();
+            })
+            .then(html => {
+                section.innerHTML = html; 
+                const scriptTags = section.querySelectorAll('script');
+                scriptTags.forEach(script => {
+                    const newScript = document.createElement('script');
+
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.textContent = `
+                            (() => {
+                                ${script.textContent}
+                            })();
+                        `;
+                    }
+                    document.body.appendChild(newScript); 
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
         
     </script>
 </body>
