@@ -16,11 +16,11 @@
                 <div class="sidebar-short"></div>
             </div>
             <ul>
-                <li class="active">
+                <li>
                     <div class="map-icon"></div>
                     <h2>MAP</h2>
                 </li>
-                <li>
+                <li class="active">
                     <div class="about-icon"></div>
                     <h2>ABOUT</h2>
                 </li>
@@ -74,7 +74,7 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadMapPage();
+            loadAboutPage();
             for (let i = 0; i < li.length; i++) {
                 li[i].addEventListener('click', () => {
                     for (let j = 0; j < li.length; j++) {

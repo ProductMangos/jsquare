@@ -457,3 +457,116 @@ aside {
     display: flex;
     align-items: center;
 }
+
+.content {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.box-title {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--tan);
+    align-items: center;
+
+    h3 {
+        margin-left: 30px;
+        font-weight: 300;
+        unicode-bidi: isolate;
+        letter-spacing: .15rem;
+        font-size: 1.5rem;
+    }
+
+}
+
+.box-content {
+    border: 1px solid var(--lighttan);
+    background-color: var(--lighttan);
+    margin-bottom: 20px;
+}
+
+.box-content-image {
+    height: 250px;
+    background-color: var(--tan);
+    margin: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.box-content-divider {
+    height: 2px;
+    width: 88%;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
+}
+
+.box-content-text {
+    width: 88%;
+    height: 200px;
+    margin: 0 auto;
+    unicode-bidi: isolate;
+    letter-spacing: .15rem;
+    font-size: 1.2rem;
+}
+
+.box-content-spacer {
+    height: 20px;
+}
+
+.content-image {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-menu {
+    display: flex;
+    align-items: flex-start;
+    width: 520px;
+}
+
+.box-content-menu {
+    width: 100%;
+    height: 575px;
+    background-color: var(--lighttan);
+}
+
+.box-divider {
+    width: 90%;
+    margin: 8px 10px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.box-content-menu-list {
+    width: 90%;
+    margin: 8px 10px;
+    padding: 10px;
+    background: linear-gradient(to right, #4D493E 50%, var(--lighttan) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.1s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+.box-content-menu-item-border-top {
+    background: linear-gradient(to right, #4D493E 50%, var(--lighttan) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.1s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+.box-content-menu-list:hover, .box-content-menu-item-border-top {
+    cursor: pointer;
+    background-position: left bottom;
+    color: var(--tan);
+}
