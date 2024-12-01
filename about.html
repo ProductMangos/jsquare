@@ -13,29 +13,89 @@
             <div class="box-divider"></div>
             <div class="box-content-menu-list">
                 <div class="box-content-menu-item-border-top"></div>
-                <div class="box-content-menu-item">
-                    <div>akslkd</div>
+                <div class="box-content-menu-item active">
+                    <div class="about-selection">Website</div>
                 </div>
-                <div class="box-content-menu-item-border-bottom"></div>
+                <div class="box-content-menu-item-border-top"></div>
+            </div>
+            <div class="box-content-menu-list">
+                <div class="box-content-menu-item-border-top"></div>
+                <div class="box-content-menu-item">
+                    <div class="about-selection">Profession</div>
+                </div>
+                <div class="box-content-menu-item-border-top"></div>
+            </div>
+            <div class="box-content-menu-list">
+                <div class="box-content-menu-item-border-top"></div>
+                <div class="box-content-menu-item">
+                    <div class="about-selection">Experience</div>
+                </div>
+                <div class="box-content-menu-item-border-top"></div>
             </div>
         </div>
     </div>   
 
-    <div class="content">
-        <div class="box-view">
-            <div class="box-title">
-                <h3>Website Inspiration</h3>
-            </div>
-            <div class="box-content">
-                <div class="box-content-image">
-                    <img class="content-image" src="assets/images/nier-automata.webp">
-                </div>
-                <div class="box-content-divider"></div>
-                <div class="box-content-text">
-                    <p>The theme is strongly inflenced by NieR Automata UI interface. Screenshots can be found <a href="https://interfaceingame.com/games/nierautomata/" target="_blank">here</a>.</p>
-                    <p style="margin-top: 10px">The UI is simple yet clear and intuitive.</p>
-                </div>
-            </div>
-        </div>
+    <div id="content">
+
+
     </div>   
 </div>
+<script>
+    const menuItems = document.querySelectorAll('.box-content-menu-item');
+    const section = document.getElementById('content');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuItems.forEach(item => item.classList.remove('active'));
+            item.classList.add('active');
+
+            const selectedOption = item.querySelector('.about-selection').textContent
+
+            if (selectedOption === 'Website Inspiration') {
+                loadComponents('website-inspiration');
+            } else if (selectedOption === 'Profession') {
+                loadComponents('profession');
+            } else if (selectedOption === 'Experience') {
+                loadComponents('experience');
+            }
+        });
+
+        
+    });
+
+    const loadComponents = (path) => {
+        fetch(`components/about/${path}.html`)
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load about.html');
+            return response.text();
+        })
+        .then(html => {
+            section.innerHTML = html; 
+            const scriptTags = section.querySelectorAll('script');
+            scriptTags.forEach(script => {
+                const newScript = document.createElement('script');
+
+                if (script.src) {
+                    newScript.src = script.src;
+                } else {
+                    newScript.textContent = `
+                        (() => {
+                            ${script.textContent}
+                        })();
+                    `;
+                }
+                document.body.appendChild(newScript); 
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    try {
+        loadComponents("website-inspiration");
+    } catch (error) {
+        console.error('Error loading component:', error);
+    }
+    
+
+</script>

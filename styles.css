@@ -460,7 +460,7 @@ aside {
 
 .content {
     width: 100%;
-    max-width: 500px;
+    
 }
 
 
@@ -535,6 +535,7 @@ aside {
     width: 100%;
     height: 575px;
     background-color: var(--lighttan);
+    margin: 0 20px;
 }
 
 .box-divider {
@@ -544,16 +545,16 @@ aside {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.box-content-menu-list {
+.box-content-menu-item {
     width: 90%;
-    margin: 8px 10px;
+    margin: 5px 10px;
     padding: 10px;
     background: linear-gradient(to right, #4D493E 50%, var(--lighttan) 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all 0.1s ease-out;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .box-content-menu-item-border-top {
@@ -563,10 +564,24 @@ aside {
     transition: all 0.1s ease-out;
     display: flex;
     align-items: center;
+    height: 2px;
+    width: 90%;
+    margin-left: 10px;
 }
 
-.box-content-menu-list:hover, .box-content-menu-item-border-top {
+.box-content-menu-list:hover .box-content-menu-item {
     cursor: pointer;
     background-position: left bottom;
+    color: var(--tan);
+}
+
+.box-content-menu-list:hover  .box-content-menu-item-border-top {
+    cursor: pointer;
+    background-position: left bottom;
+    color: var(--tan);
+}
+
+.box-content-menu-list .box-content-menu-item.active {
+    background: var(--black);
     color: var(--tan);
 }
